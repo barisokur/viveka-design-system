@@ -1,5 +1,11 @@
 # Viveka Design System
 
+> ## ⚠️ ÖNEMLİ — LOGO (önce bunu oku)
+> **Logoyu asla AI'a çizdirme.** Claude/Stitch gibi araçlar tariften logo uydurur ve yanlış çıkar.
+> **Pratikte en sık kullanacağın akış:** logo SVG dosyasını ([`assets/logos/viveka-logo.svg`](assets/logos/viveka-logo.svg) — navy; navy/foto zemin için [`viveka-logo-white.svg`](assets/logos/viveka-logo-white.svg)) sohbete **ekle** ve şunu de: **"Bu dosyayı aynen kullan, logoyu yeniden çizme."**
+> PowerPoint / Slides / Word'de ise `Insert → Picture` ile dosyayı ekle — şekille çizme.
+> Detaylı, araç-araç kılavuz: [`assets/logos/USAGE.md`](assets/logos/USAGE.md).
+
 One brand, every output. A single source of truth (design tokens) feeds tool-specific "adapters" so Viveka looks identical whether it comes out of Claude, Google Stitch, an HTML page, a PDF, a PowerPoint deck, or Google Slides.
 
 ```
