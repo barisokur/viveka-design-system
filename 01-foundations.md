@@ -76,6 +76,8 @@ Hierarchy is created by **size + weight + space**, not by decorative bars under 
 
 ## 5. Logo
 
+> **Never recreate the logo.** It is a fixed asset, not something to generate or describe-for-redraw. AI tools invent wrong logos from descriptions — always EMBED the real file. Vector: [`assets/logos/viveka-logo.svg`](assets/logos/viveka-logo.svg) (navy, default) and [`assets/logos/viveka-logo-white.svg`](assets/logos/viveka-logo-white.svg) (on navy/photo). Full per-tool instructions: [`assets/logos/USAGE.md`](assets/logos/USAGE.md).
+
 Lowercase `viveka` wordmark in navy with a small green dot below the "i". Place with generous clear space; never stretch, recolor, rotate, crop, or add effects.
 
 **Four approved lockups** (from the guideline): logo on **light gray**, on **navy**, on a **photo**, and on **green**.

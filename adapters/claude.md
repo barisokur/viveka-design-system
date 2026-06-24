@@ -32,7 +32,7 @@ STYLE RULES
 - NO drop shadows, NO gradients, NO glows, NO texture. Separation = borders + fills + whitespace.
 - Icons: outline or minimal-filled, navy or green.
 - Max two text colors per view. Never white headlines (there are no color backgrounds to put them on).
-- Logo: lowercase "viveka" navy wordmark with a green dot under the "i"; navy-on-white; top-left or bottom-right with clear space; never stretch/recolor/rotate/crop.
+- LOGO: never draw, redraw, or recreate the Viveka logo. It is a provided asset. Embed the exact file: viveka-logo.svg (navy, on light backgrounds) or viveka-logo-white.svg (on navy/photo). Use it via inline <svg> or <img src="viveka-logo.svg">. If no file is attached, leave a clearly-labelled empty logo placeholder — do NOT invent a logo. Place top-left or bottom-right with clear space; never stretch/recolor/rotate/crop.
 
 BRAND
 - Tagline: "Designs · Delivers · Executes" (green dots as separators).

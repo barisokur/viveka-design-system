@@ -30,6 +30,11 @@ Design rules:
 Append your actual request, e.g.:
 > "...Design a dashboard with a top nav bar, a row of 3 stat cards, and a data table below."
 
+## Logo (important — Stitch invents logos)
+Stitch can't import our exact logo mid-generation, so tell it NOT to design one:
+add *"top-left logo area: leave an empty 150×40px box labelled LOGO, do not design a logo"* to the prompt.
+After export, replace that box with `<img src="viveka-logo.svg">` (or inline the SVG). Never ship a Stitch-generated logo. See [`assets/logos/USAGE.md`](../assets/logos/USAGE.md).
+
 ## Tips
 - If Stitch drifts toward shadows/gradients or a colored hero, add: *"flat, no shadows, white background, navy headings only."*
 - Stitch may not offer Work Sans — Lexend alone is an acceptable single-font fallback for the whole UI.

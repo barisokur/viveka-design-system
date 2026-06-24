@@ -6,6 +6,8 @@ Use this prompt with a deck-generating tool (Claude + the pptx skill, Gamma, etc
 
 > **Sync note:** colors/tagline/contact come from the tokens file. If a token changes, update the hex values below.
 
+> **Logo:** never let the deck tool draw the logo. Insert the real file — `Insert → Picture → From file` → `assets/logos/viveka-logo.svg` (or `Viveka-Logo-PNG.png`); use `viveka-logo-white.svg` on navy. Put it on the slide master. See [`assets/logos/USAGE.md`](../assets/logos/USAGE.md).
+
 ---
 
 ```text

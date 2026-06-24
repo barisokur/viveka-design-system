@@ -34,10 +34,9 @@
     p  { margin-top: var(--viveka-space-md); max-width: 62ch; }
     .muted { color: var(--viveka-muted); font-size: var(--viveka-fs-caption); }
 
-    /* Logo: navy wordmark + green dot, built in text so it scales crisp. */
-    .logo { font-family: var(--viveka-font-display); font-weight: var(--viveka-w-black);
-            font-size: 1.75rem; color: var(--viveka-navy); letter-spacing: -0.02em; }
-    .logo .dot { color: var(--viveka-green); }
+    /* Logo: the REAL official logo asset — never recreated in text/CSS. */
+    .logo { width: 150px; height: auto; display: block; }
+    .logo.sm { width: 104px; }
 
     .rule-green { width: 48px; height: var(--viveka-accent-w); background: var(--viveka-green);
                   border: 0; margin: var(--viveka-space-lg) 0; }
@@ -81,7 +80,7 @@
 
   <!-- ============ PAGE 1: COVER ============ -->
   <section class="sheet">
-    <div class="logo">viveka<span class="dot">.</span></div>
+    <img class="logo" src="../../assets/logos/viveka-logo.svg" alt="Viveka" />
     <div style="margin-top: 30%;">
       <h1>Strategic Innovation,<br/>Designed to Execute</h1>
       <hr class="rule-green" />
@@ -95,7 +94,7 @@
 
   <!-- ============ PAGE 2: CONTENT + COMPONENTS ============ -->
   <section class="sheet">
-    <div class="logo" style="font-size:1.2rem;">viveka<span class="dot">.</span></div>
+    <img class="logo sm" src="../../assets/logos/viveka-logo.svg" alt="Viveka" />
 
     <h1>Program Results</h1>
     <p>This starter shows every core component wired to the design tokens. Edit values in

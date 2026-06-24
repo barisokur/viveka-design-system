@@ -32,5 +32,8 @@ Create Google Slides for Viveka, a corporate/clean/minimal/premium strategic-inn
 - Tagline "Designs · Delivers · Executes"; contact meet@viveka.com.tr · viveka.com.tr.
 ```
 
+## Logo
+Never draw the logo. `Insert → Image → Upload from computer` → `assets/logos/viveka-logo.svg` (or `Viveka-Logo-PNG.png`); use `viveka-logo-white.svg` on navy. Place it on the master so every slide inherits it. See [`assets/logos/USAGE.md`](../assets/logos/USAGE.md).
+
 ## Tip
 Save the finished deck as **"Viveka — Master Template"** and use `File → Make a copy` for every new deck so the theme stays locked.
