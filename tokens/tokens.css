@@ -1,0 +1,109 @@
+/* ==========================================================================
+   Viveka Design Tokens — CSS custom properties
+   Source of truth: tokens.json (v1.0.0)
+   Import this in any HTML / PDF (print) / web artifact. Use the variables;
+   never hardcode a hex value. To rebrand, edit the values here once.
+   ========================================================================== */
+
+/* Web fonts — Lexend + Work Sans are both on Google Fonts.
+   Avenir is intentionally NOT loaded here: it is for native PowerPoint only. */
+@import url('https://fonts.googleapis.com/css2?family=Lexend:wght@400;500;600;700;800&family=Work+Sans:ital,wght@0,400;0,500;0,600;1,400&display=swap');
+
+:root {
+  /* ---- Color ---- */
+  --viveka-navy:        #00008B; /* PRIMARY: headlines, titles, big numbers, table headers, thin borders */
+  --viveka-green:       #64C431; /* ACCENT ONLY: dots, dividers, icons, highlights, tags (<10% weight) */
+  --viveka-light-gray:  #F2F2F4; /* supporting fill: cards, table rows, callouts — never full canvas */
+  --viveka-white:       #FFFFFF; /* mandatory canvas/background */
+  --viveka-ink:         #1A1A2E; /* body text */
+  --viveka-ink-soft:    #4A4A5A; /* secondary body / card descriptions */
+  --viveka-muted:       #6B6B7B; /* captions, labels, metadata */
+  --viveka-card-alt:    #F8F8FA; /* alternate subtle card fill */
+  --viveka-tint-navy:   #EEF0F8; /* very light navy tint for callouts */
+  --viveka-border:      #E0E0E8; /* hairline card borders */
+  --viveka-border-soft: #D0D0D8; /* table cell borders */
+  --viveka-leader:      #C0C0C8; /* TOC dot leaders */
+
+  /* ---- Typography ---- */
+  --viveka-font-display: 'Lexend', system-ui, 'Segoe UI', Arial, sans-serif;   /* headlines */
+  --viveka-font-body:    'Work Sans', system-ui, 'Segoe UI', Arial, sans-serif;/* body */
+
+  --viveka-w-regular: 400;
+  --viveka-w-medium:  500;
+  --viveka-w-semibold:600;
+  --viveka-w-bold:    700;
+  --viveka-w-black:   800;
+
+  /* Fluid type scale (web). Office/print sizes live in the per-format adapters. */
+  --viveka-fs-cover:   clamp(2.5rem, 5vw, 3.5rem);
+  --viveka-fs-title:   clamp(1.75rem, 3.5vw, 2.5rem);
+  --viveka-fs-section: clamp(1.375rem, 2.5vw, 1.75rem);
+  --viveka-fs-stat:    clamp(3rem, 6vw, 4.5rem);
+  --viveka-fs-h2:      1.25rem;
+  --viveka-fs-h3:      1rem;
+  --viveka-fs-body:    1rem;
+  --viveka-fs-label:   0.8125rem;
+  --viveka-fs-caption: 0.75rem;
+  --viveka-leading-body: 1.45;
+
+  /* ---- Spacing (4px base) ---- */
+  --viveka-space-xs:  4px;
+  --viveka-space-sm:  8px;
+  --viveka-space-md:  16px;
+  --viveka-space-lg:  24px;
+  --viveka-space-xl:  40px;
+  --viveka-space-2xl: 64px;
+  --viveka-page-pad:  clamp(24px, 5vw, 64px);
+
+  /* ---- Radius ---- */
+  --viveka-radius-sm:  4px;
+  --viveka-radius-md:  8px;
+  --viveka-radius-pill: 999px;
+
+  /* ---- Lines ---- */
+  --viveka-hairline: 1px;
+  --viveka-border-w: 1.5px;
+  --viveka-accent-w: 4px;
+
+  /* ---- Hard rules (kept as comments to remember intent) ---- */
+  /* NO box-shadow. NO gradients. NO texture. Separation = borders + fills + whitespace. */
+}
+
+/* ---- Optional base styles you can opt into ---- */
+.viveka {
+  background: var(--viveka-white);
+  color: var(--viveka-ink);
+  font-family: var(--viveka-font-body);
+  font-size: var(--viveka-fs-body);
+  line-height: var(--viveka-leading-body);
+}
+.viveka h1, .viveka h2, .viveka h3, .viveka .viveka-title {
+  font-family: var(--viveka-font-display);
+  color: var(--viveka-navy);
+  font-weight: var(--viveka-w-bold);
+}
+.viveka .viveka-stat {
+  font-family: var(--viveka-font-display);
+  font-weight: var(--viveka-w-black);
+  font-size: var(--viveka-fs-stat);
+  color: var(--viveka-navy);
+}
+.viveka .viveka-accent { color: var(--viveka-green); }
+.viveka .viveka-dot::before { content: "● "; color: var(--viveka-green); }
+.viveka .viveka-card {
+  background: var(--viveka-card-alt);
+  border: var(--viveka-hairline) solid var(--viveka-border);
+  border-radius: var(--viveka-radius-md);
+  padding: var(--viveka-space-lg);
+}
+.viveka .viveka-callout {
+  background: var(--viveka-tint-navy);
+  border-left: var(--viveka-border-w) solid var(--viveka-navy);
+  padding: var(--viveka-space-md) var(--viveka-space-lg);
+}
+.viveka .viveka-rule-green {
+  height: var(--viveka-accent-w);
+  width: 48px;
+  background: var(--viveka-green);
+  border: 0;
+}

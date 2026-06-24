@@ -1,0 +1,39 @@
+/* ==========================================================================
+   Viveka — Print stylesheet (HTML -> PDF)
+   Pairs with index.html + tokens.css. Produces A4 white pages with the brand
+   colors preserved. Make a PDF via: browser -> Print -> Save as PDF
+   (enable "Background graphics" so navy table headers / green accents render),
+   or headless:  chrome --headless --print-to-pdf=viveka.pdf index.html
+   ========================================================================== */
+
+@page {
+  size: A4;
+  margin: 18mm 16mm;
+}
+
+@media print {
+  html, body { background: #FFFFFF; }
+
+  /* Force brand colors to print (Chrome/Safari honor this). */
+  * { -webkit-print-color-adjust: exact !important; print-color-adjust: exact !important; }
+
+  /* Each .sheet becomes its own physical page. */
+  .sheet {
+    margin: 0;
+    max-width: none;
+    width: 100%;
+    min-height: auto;
+    padding: 0;
+    page-break-after: always;
+  }
+  .sheet:last-child { page-break-after: auto; }
+
+  /* Keep footers anchored on the printed page. */
+  .footer { position: fixed; bottom: 8mm; left: 0; right: 0; }
+
+  /* Avoid splitting components across pages. */
+  .stat-card, .callout, table, h1, h2, h3 { break-inside: avoid; }
+  h1, h2, h3 { break-after: avoid; }
+
+  a { color: var(--viveka-navy); text-decoration: none; }
+}

@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Viveka — HTML / PDF Starter</title>
+
+  <!-- Single source of truth: all colors/fonts come from tokens.css -->
+  <link rel="stylesheet" href="../../tokens/tokens.css" />
+  <link rel="stylesheet" href="print.css" />
+
+  <style>
+    /* Page-level layout for this starter. Brand values are ALWAYS via var(--viveka-*). */
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      background: var(--viveka-white);
+      color: var(--viveka-ink);
+      font-family: var(--viveka-font-body);
+      font-size: var(--viveka-fs-body);
+      line-height: var(--viveka-leading-body);
+    }
+    .sheet {                       /* one A4-ish page; repeats for multi-page PDF */
+      max-width: 820px;
+      margin: 24px auto;
+      padding: var(--viveka-space-2xl);
+      background: var(--viveka-white);
+      min-height: 1040px;
+      position: relative;
+    }
+    h1, h2, h3 { font-family: var(--viveka-font-display); color: var(--viveka-navy); line-height: 1.15; }
+    h1 { font-size: var(--viveka-fs-title); font-weight: var(--viveka-w-black); }
+    h2 { font-size: var(--viveka-fs-section); font-weight: var(--viveka-w-bold); margin-top: var(--viveka-space-xl); }
+    h3 { font-size: var(--viveka-fs-h3); font-weight: var(--viveka-w-semibold); margin-top: var(--viveka-space-lg); }
+    p  { margin-top: var(--viveka-space-md); max-width: 62ch; }
+    .muted { color: var(--viveka-muted); font-size: var(--viveka-fs-caption); }
+
+    /* Logo: navy wordmark + green dot, built in text so it scales crisp. */
+    .logo { font-family: var(--viveka-font-display); font-weight: var(--viveka-w-black);
+            font-size: 1.75rem; color: var(--viveka-navy); letter-spacing: -0.02em; }
+    .logo .dot { color: var(--viveka-green); }
+
+    .rule-green { width: 48px; height: var(--viveka-accent-w); background: var(--viveka-green);
+                  border: 0; margin: var(--viveka-space-lg) 0; }
+
+    /* Stat cards */
+    .stats { display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--viveka-space-lg);
+             margin-top: var(--viveka-space-lg); }
+    .stat-card { background: var(--viveka-card-alt); border: var(--viveka-hairline) solid var(--viveka-border);
+                 border-radius: var(--viveka-radius-md); padding: var(--viveka-space-lg); }
+    .stat-card .bar { width: 32px; height: var(--viveka-accent-w); background: var(--viveka-green);
+                      border-radius: var(--viveka-radius-pill); margin-bottom: var(--viveka-space-sm); }
+    .stat-card .num { font-family: var(--viveka-font-display); font-weight: var(--viveka-w-black);
+                      font-size: 2.75rem; color: var(--viveka-navy); line-height: 1; }
+    .stat-card .lbl { color: var(--viveka-muted); font-size: var(--viveka-fs-label); margin-top: var(--viveka-space-sm); }
+
+    /* Bullets with green dots */
+    ul.viveka-list { list-style: none; margin-top: var(--viveka-space-md); }
+    ul.viveka-list li { padding-left: 1.25rem; position: relative; margin-top: var(--viveka-space-sm); }
+    ul.viveka-list li::before { content: "●"; color: var(--viveka-green); position: absolute; left: 0; font-size: 0.7rem; top: 0.25rem; }
+
+    /* Callout */
+    .callout { background: var(--viveka-tint-navy); border-left: var(--viveka-border-w) solid var(--viveka-navy);
+               padding: var(--viveka-space-md) var(--viveka-space-lg); margin-top: var(--viveka-space-lg);
+               border-radius: 0 var(--viveka-radius-sm) var(--viveka-radius-sm) 0; }
+    .callout strong { color: var(--viveka-navy); }
+
+    /* Table */
+    table { width: 100%; border-collapse: collapse; margin-top: var(--viveka-space-lg); font-size: 0.9rem; }
+    thead th { background: var(--viveka-navy); color: var(--viveka-white); font-family: var(--viveka-font-display);
+               font-weight: var(--viveka-w-semibold); text-align: left; padding: 8px 12px; }
+    tbody td { padding: 8px 12px; border: var(--viveka-hairline) solid var(--viveka-border-soft); }
+    tbody tr:nth-child(even) td { background: var(--viveka-light-gray); }
+
+    .footer { position: absolute; bottom: var(--viveka-space-xl); left: var(--viveka-space-2xl);
+              right: var(--viveka-space-2xl); display: flex; justify-content: space-between;
+              color: var(--viveka-muted); font-size: var(--viveka-fs-caption);
+              border-top: var(--viveka-hairline) solid var(--viveka-border); padding-top: var(--viveka-space-sm); }
+  </style>
+</head>
+<body>
+
+  <!-- ============ PAGE 1: COVER ============ -->
+  <section class="sheet">
+    <div class="logo">viveka<span class="dot">.</span></div>
+    <div style="margin-top: 30%;">
+      <h1>Strategic Innovation,<br/>Designed to Execute</h1>
+      <hr class="rule-green" />
+      <p class="muted">Corporate transformation &amp; startup-corporate collaboration<br/>Prepared for [Client] · June 2026 · Confidential</p>
+    </div>
+    <div class="footer">
+      <span>Designs · Delivers · Executes</span>
+      <span>viveka.com.tr</span>
+    </div>
+  </section>
+
+  <!-- ============ PAGE 2: CONTENT + COMPONENTS ============ -->
+  <section class="sheet">
+    <div class="logo" style="font-size:1.2rem;">viveka<span class="dot">.</span></div>
+
+    <h1>Program Results</h1>
+    <p>This starter shows every core component wired to the design tokens. Edit values in
+       <code>tokens/tokens.css</code> and everything here updates — that is the whole point of the system.</p>
+
+    <div class="stats">
+      <div class="stat-card"><div class="bar"></div><div class="num">16</div><div class="lbl">years of operation</div></div>
+      <div class="stat-card"><div class="bar"></div><div class="num">87%</div><div class="lbl">PoC success rate</div></div>
+      <div class="stat-card"><div class="bar"></div><div class="num">40+</div><div class="lbl">enterprise clients</div></div>
+    </div>
+
+    <h2>Three Service Pillars</h2>
+    <ul class="viveka-list">
+      <li>Startup–Corporate Collaboration</li>
+      <li>Human Capital &amp; Leadership Transformation</li>
+      <li>Access to Innovation &amp; Technology</li>
+    </ul>
+
+    <div class="callout">
+      <strong>Key finding.</strong> An end-to-end model — from strategy design through execution —
+      consistently outperforms advisory-only engagements on measured PoC conversion.
+    </div>
+
+    <h2>Selected Programs</h2>
+    <table>
+      <thead><tr><th>Program</th><th>Applications</th><th>PoC Rate</th></tr></thead>
+      <tbody>
+        <tr><td>Corporate Accelerator A</td><td>320</td><td>91%</td></tr>
+        <tr><td>Public Innovation B</td><td>540</td><td>78%</td></tr>
+        <tr><td>Leadership Cohort C</td><td>120</td><td>—</td></tr>
+      </tbody>
+    </table>
+
+    <div class="footer">
+      <span>meet@viveka.com.tr</span>
+      <span>2</span>
+    </div>
+  </section>
+
+</body>
+</html>
