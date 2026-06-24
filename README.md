@@ -17,6 +17,7 @@ viveka-design-system/
 │   └── tokens.css       ← the same values as CSS variables (--viveka-*)
 ├── adapters/            ← copy-paste briefs, one per tool
 │   ├── claude.md        ← paste into a Claude prompt or Project
+│   ├── openai-gemini.md ← same brief for ChatGPT & Gemini + image-gen caveat
 │   ├── stitch.md        ← theme settings + brief for Google Stitch
 │   ├── pptx.md          ← PowerPoint master-template prompt (Avenir)
 │   ├── google-slides.md ← Slides theme setup + AI brief (Lexend)
@@ -38,6 +39,7 @@ Design decisions (navy is `#00008B`, headlines are bold, no shadows…) live in 
 | You want to… | Open | Then |
 |---|---|---|
 | Generate HTML / React / SVG with **Claude** | `adapters/claude.md` | Paste the block into your prompt (or a Claude Project). Attach `tokens/tokens.css` for HTML. |
+| Generate with **ChatGPT** or **Gemini** | `adapters/openai-gemini.md` | Same brief; load instructions per tool. **Note the image-generation caveat** (DALL·E/Imagen can't do the logo). |
 | Generate UI in **Stitch** | `adapters/stitch.md` | Set the theme colors/font, paste the brief, describe the screen. |
 | Make a **PDF** or **web page** | `adapters/html-pdf/` | Open `index.html`, edit content, Print → Save as PDF. |
 | Build a **PowerPoint** deck | `adapters/pptx.md` | Feed the prompt to a deck tool, or build the 8 masters by hand. |
